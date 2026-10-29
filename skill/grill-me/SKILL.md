@@ -1,0 +1,51 @@
+---
+name: grill-me
+description: Interview yourself about a loose idea until you can commit to it.
+---
+
+- **What it is**
+  - A user-invoked skill (`/grill-me`) that interviews you about a loose idea until you can commit to it
+  - Stateless: writes no files, needs no repo, and works on any subject (features, business calls, writing, next steps)
+  - The only output is a clearer idea in your own head
+- **How it works**
+  - Asks in rounds; each round is the full frontier (every question whose prerequisites you've already settled)
+  - Never asks something that depends on an answer it hasn't heard yet
+  - Ends when the frontier is empty: every branch visited, no unstated assumptions left
+  - Count rounds, not questions (46 questions over 4 rounds is normal)
+- **When to use it**
+  - As soon as you have an idea worth taking seriously, even if it's vague; vagueness is what the session removes
+  - Skip it if you can already specify the thing precisely
+  - Start in a fresh conversation, not on top of an agent-written plan
+  - Keep plan mode off (it rushes toward a plan instead of asking questions)
+  - Pick the right skill:
+    - `grill-me`: anything, anywhere, no repo
+    - `grill-with-docs`: codebase to align against; stateful, keeps `GLOSSARY.md` and ADRs
+    - `wayfinder`: too big for one session; charts a map and runs grilling inside it
+- **Your role**
+  - You own the scope; the quality of the result depends on your answers, not the question count
+  - Failure mode is passivity: "agreed, agreed, agreed" yields a plan you nodded at but didn't decide
+  - Be active:
+    - Push back on vague questions
+    - Call out scope drift
+    - Say "I don't know" and mean it
+  - Opposite (rarer) error: staying in the interview so long you never build
+- **Grillable vs. ungrillable**
+  - Ungrillable questions (e.g. "one long form or three pages?", "how should it feel?") need something to react to
+  - When you hit one, stop grilling, build a throwaway with `prototype`, then answer in one line
+  - Talking through ungrillable questions makes sessions bloat as the agent rephrases and you guess
+- **Signs it's working**
+  - You disagree with something
+  - Few rounds, with later rounds clearly building on earlier answers
+  - You land somewhere unexpected after seeing a decision you'd been making unknowingly
+  - You can defend each choice to someone who wasn't there
+- **FAQ highlights**
+  - Too many questions (e.g. 200): scope was too big; split the work first, then grill each piece; long sessions also hit the "dumb zone" as the context window fills
+  - Want one question at a time: add "When grilling, ask one question at a time." to your global `CLAUDE.md`
+  - Don't know an answer: say so; it often signals you should prototype rather than guess
+  - Before writing the spec: don't start fresh; hand the same conversation to `to-spec`
+  - Model choice: use your best model, since grilling relies on its knowledge of how systems break; cheaper models are fine for implementation
+- **Where it fits**
+  - A portable, stateless standalone; the only difference from `grill-with-docs` is portability (no code reading, no recorded state)
+  - Both build on the underlying `grilling` skill
+  - If the idea turns out to be software, hand the conversation to `to-spec` and continue into the build flow (optional)
+  - Unsure which flow fits: `ask-matt` routes you
