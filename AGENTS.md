@@ -14,6 +14,7 @@
     - integration: each test deals with one function with real IO.
     - e2e: each test runs vidmerger (tests/e2e*).
 - 📝 docs handling
+  - A new CHANGELOG entry should be placed on top of the list if there is any.
   - every function in `src/` that is not a test helper gets a `///` docstring
     - say what it does and what it returns (and when it errors or panics)
     - keep the docstring directly above `fn`, with no blank line between
