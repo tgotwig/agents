@@ -8,6 +8,10 @@
     - set a scope if it fits
   - commit msg should have a max length of 72 chars
   - PR titles: <conventionalcommit msg> (<ISSUE_ID>)
+- 🛠️ taskfile handling
+  - keep them compact and minimal
+  - have one-liner recipes as good as possible: `<RECIPE>: <CMD>`
+  - use intuitive recipe names, if it calls a cmd `xyz`, then name it kinda like `xyz`.
 - 🧪 test handling
   - testing pyramid: unit > integration > e2e
     - unit: each test deals with one function, IO should be mocked.
