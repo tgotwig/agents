@@ -18,7 +18,6 @@
     - integration: each test deals with one function with real IO.
     - e2e: each test runs the app via public entrypoints, as a user would.
 - 📝 docs handling
-  - A new CHANGELOG entry should be placed on top of the list if there is any.
-  - every function in `src/` that is not a test helper gets a `///` docstring
-    - say what it does and what it returns (and when it errors or panics)
-    - keep the docstring directly above `fn`, with no blank line between
+  - a new CHANGELOG entry should be placed on top of the list if there is any.
+  - every non-test function in `src/` needs a `///` docstring directly above `fn` (no blank line)
+    - say what it does, what it returns, and when it errors or panics
