@@ -16,7 +16,7 @@
   - testing pyramid: unit > integration > e2e
     - unit: each test deals with one function, IO should be mocked.
     - integration: each test deals with one function with real IO.
-    - e2e: each test runs vidmerger (tests/e2e*).
+    - e2e: each test runs the app via public entrypoints, as a user would.
 - 📝 docs handling
   - A new CHANGELOG entry should be placed on top of the list if there is any.
   - every function in `src/` that is not a test helper gets a `///` docstring
