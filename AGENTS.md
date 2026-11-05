@@ -1,5 +1,5 @@
 - 💬 general
-  - use emojis
+  - use often emojis 🐱
   - write in plain english for non-natives
   - put temporary files (drafts, PR bodies, commit messages, scratch output) inside `temp/` at the repo root
 - 🌳 git handling
